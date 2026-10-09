@@ -56,8 +56,7 @@ export default function HomeScreen() {
   }
 
   return (
-    <div>
-      <br /><br /><br />
+    <div className="trivia-game-container">
       <h4>API key:</h4>
       <TextInput
         value={apiKey}
@@ -65,6 +64,7 @@ export default function HomeScreen() {
         />
       <h4>Category:</h4>
       <TextInput
+        className="text-input"
         value={category}
         onChangeText={setCategory}
       />
@@ -74,8 +74,16 @@ export default function HomeScreen() {
         onPress={getQuestion}
       />
       <div>
-        <h3>Question:</h3>
-        <p>{question}</p>
+        <h3>{question}</h3>
+        <TextInput
+          className="text-input"
+          value={answer}
+          onChangeText={setAnswer}
+        />
+        <Button
+          title="Check answer"
+          onPress={checkAnswer}
+        />
       </div>
     </div>
   )
